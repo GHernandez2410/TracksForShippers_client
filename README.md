@@ -1,9 +1,5 @@
 ## React Redux Login, Logout, Filter table data example using Hooks
 
-Fullstack (JWT Authentication & Api example):
-
-> [React + Django] 
-
 ### Set port
 .env
 ```
