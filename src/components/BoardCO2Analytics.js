@@ -8,7 +8,7 @@ import TrackFilter from './TrackFilter';
 import { getShipments } from "../actions/shipments";
 
 const BoardCO2Analytics = (props) => {
-  const { user: currentUser } = useSelector((state) => state.auth);
+  // const { user: currentUser } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
 
@@ -16,13 +16,13 @@ const BoardCO2Analytics = (props) => {
     dispatch(getShipments())
   },[dispatch]);
   
-  if (!currentUser) {
-    return <Redirect to="/login" />;
-  }
+  // if (!currentUser) {
+  //   return <Redirect to="/login" />;
+  // }
 
   return (
     <div className="container">
-      <header className="jumbotron">
+      {/* <header className="jumbotron">
         <h2>
           <strong>
             Wellcome
@@ -36,7 +36,7 @@ const BoardCO2Analytics = (props) => {
           <strong>Token:</strong> {currentUser.data.token.substring(0, 20)} ...{" "}
           {currentUser.data.token.substr(currentUser.data.token.length - 20)}
         </p>
-      </header> 
+      </header>  */}
       <TrackFilter/>
       <TrackTable props={props}/>
     </div>

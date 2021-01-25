@@ -19,15 +19,15 @@ const App = () => {
   const { user: currentUser } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    history.listen((location) => {
-      dispatch(clearMessage()); // clear message when changing location
-    });
-  }, [dispatch]);
+  // useEffect(() => {
+  //   history.listen((location) => {
+  //     dispatch(clearMessage()); // clear message when changing location
+  //   });
+  // }, [dispatch]);
 
-  const logOut = () => {
-    dispatch(logout());
-  };
+  // const logOut = () => {
+  //   dispatch(logout());
+  // };
 
   return (
     <Router history={history}>
@@ -37,11 +37,11 @@ const App = () => {
             Tracks
           </Link>
           <div className="navbar-nav mr-auto">
-            {currentUser && (
+            {/* {currentUser && ( */}
               <div className="navbar-nav ml-auto">
                 <li className="nav-item">
                 <Link to={"/boardCO2Analytics"} className="nav-link">
-                  {currentUser.data.username}
+                  {/* {currentUser.data.username} */}
                 </Link>
                 </li>
                 <li className="nav-item">
@@ -50,10 +50,10 @@ const App = () => {
                 </Link> */}
                 </li>
               </div>
-            )}
+            {/* )} */}
           </div>
 
-          {currentUser ? (
+          {/* {currentUser ? (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
                 <Link to={"/boardCO2Analytics"} className="nav-link">
@@ -80,14 +80,14 @@ const App = () => {
                 </Link>
               </li>
             </div>
-          )}
+          )} */}
         </nav>
 
         <div className="container mt-3">
           <Switch>
-            <Route exact path={["/", "/login"]} component={Login} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/boardCO2Analytics" component={BoardCO2Analytics} /> 
+            {/* <Route exact path={["/", "/login"]} component={Login} /> */}
+            {/* <Route exact path="/register" component={Register} /> */}
+            <Route exact path={["/", "/boardCO2Analytics"]} component={BoardCO2Analytics} /> 
             <Route exact path="/boardCarrier" component={BoardCarrier} />
           </Switch>
         </div>
